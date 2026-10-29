@@ -1,0 +1,13 @@
+# EVAL FIXTURE — intentionally flawed configuration used to measure the review agents. Do not reuse.
+spring:
+  kafka:
+    bootstrap-servers: broker-prod-1:9092
+    properties:
+      security.protocol: PLAINTEXT
+    consumer:
+      enable-auto-commit: true
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      acks: 1

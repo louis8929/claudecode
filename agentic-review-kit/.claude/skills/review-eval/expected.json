@@ -1,0 +1,32 @@
+{
+  "description": "Ground truth for /review-eval. Lines refer to files in fixtures/.",
+  "issues": [
+    { "id": "E1", "file": "CustomerController.java", "line": 23, "severity": "blocker", "issue": "SQL injection: request parameter concatenated into SQL" },
+    { "id": "E2", "file": "CustomerController.java", "line": 12, "severity": "major", "issue": "CORS allows any origin" },
+    { "id": "E3", "file": "CustomerController.java", "line": 15, "severity": "minor", "issue": "Field injection instead of constructor injection" },
+    { "id": "E4", "file": "CustomerController.java", "line": 29, "severity": "major", "issue": "Optional.get() without presence check -> 500 instead of 404" },
+    { "id": "E5", "file": "CustomerController.java", "line": 28, "severity": "major", "issue": "JPA entity exposed directly in API (request and response)" },
+    { "id": "E6", "file": "CustomerController.java", "line": 39, "severity": "major", "issue": "Internal exception message returned to client; printStackTrace instead of logging" },
+    { "id": "E7", "file": "CustomerController.java", "line": 33, "severity": "minor", "issue": "Create returns 200 + string instead of 201 with Location; no @Valid" },
+    { "id": "E8", "file": "CustomerController.java", "line": 1, "severity": "major", "issue": "No tests for any endpoint" },
+    { "id": "E9", "file": "CustomerProfile.jsx", "line": 8, "severity": "blocker", "issue": "Access token sent in URL query string and stored in localStorage" },
+    { "id": "E10", "file": "CustomerProfile.jsx", "line": 11, "severity": "major", "issue": "useEffect missing customerId dependency; no cleanup/abort; no error handling" },
+    { "id": "E11", "file": "CustomerProfile.jsx", "line": 20, "severity": "blocker", "issue": "XSS via dangerouslySetInnerHTML with unsanitized server data" },
+    { "id": "E12", "file": "CustomerProfile.jsx", "line": 8, "severity": "minor", "issue": "Hard-coded API host" },
+    { "id": "E13", "file": "CustomerProfile.jsx", "line": 23, "severity": "minor", "issue": "Index used as key; clickable <li> not keyboard accessible; window.open without noopener" },
+    { "id": "E14", "file": "CustomerProfile.jsx", "line": 13, "severity": "nit", "issue": "console.log left in code" },
+    { "id": "K1", "file": "OrderEventsListener.java", "line": 29, "severity": "blocker", "issue": "Listener swallows exception: offset committed, message silently lost (no retry/DLT)" },
+    { "id": "K2", "file": "OrderEventsListener.java", "line": 28, "severity": "major", "issue": "Non-idempotent insert under at-least-once delivery: redelivery creates duplicate invoices" },
+    { "id": "K3", "file": "OrderEventsListener.java", "line": 26, "severity": "major", "issue": "JPA entity used as Kafka message payload (consumed and produced) instead of a versioned event record" },
+    { "id": "K4", "file": "OrderEventsListener.java", "line": 39, "severity": "major", "issue": "Dual write: DB update and Kafka send in one transaction without outbox/after-commit; send result ignored; no key" },
+    { "id": "K5", "file": "OrderEventsListener.java", "line": 25, "severity": "minor", "issue": "Hard-coded topic names and no explicit groupId on @KafkaListener" },
+    { "id": "K6", "file": "OrderEventsListener.java", "line": 30, "severity": "minor", "issue": "System.out logging of the full payload (possible PII) without topic/partition/offset" },
+    { "id": "K7", "file": "OrderEventsListener.java", "line": 1, "severity": "major", "issue": "No integration test for listener/producer (duplicate delivery, poison pill, DLT)" },
+    { "id": "Y1", "file": "application-kafka.yml", "line": 11, "severity": "blocker", "issue": "JsonDeserializer trusted packages '*' — untrusted deserialization" },
+    { "id": "Y2", "file": "application-kafka.yml", "line": 6, "severity": "major", "issue": "PLAINTEXT security protocol against a production broker" },
+    { "id": "Y3", "file": "application-kafka.yml", "line": 8, "severity": "major", "issue": "enable-auto-commit true: offsets committed before processing, messages can be lost" },
+    { "id": "Y4", "file": "application-kafka.yml", "line": 9, "severity": "major", "issue": "No ErrorHandlingDeserializer: a poison pill blocks the partition" },
+    { "id": "Y5", "file": "application-kafka.yml", "line": 13, "severity": "major", "issue": "acks=1 weakens durability (use acks=all with idempotence)" },
+    { "id": "Y6", "file": "application-kafka.yml", "line": 4, "severity": "minor", "issue": "Hard-coded production bootstrap servers instead of environment configuration" }
+  ]
+}

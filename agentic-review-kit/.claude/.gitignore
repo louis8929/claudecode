@@ -1,0 +1,4 @@
+# Local, per-developer artefacts of the agent kit
+logs/
+reports/
+settings.local.json
